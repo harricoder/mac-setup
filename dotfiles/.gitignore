@@ -1,0 +1,3 @@
+# General gitignore files
+.idea/
+.DS_Store
