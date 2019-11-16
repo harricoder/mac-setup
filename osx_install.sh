@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 # Credits:
-#   Based on:
+#   Inspired by:
 #   https://gist.github.com/t-io/8255711
 #   and
 #   https://gist.github.com/kyleparisi/a5b9b1f59be5ea8791c3
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-NC='\033[0m'
+source ./scripts/constants.sh
 
 echo
-echo -e "${YELLOW}Hey ${USER}, let's do this thing (setup your mac)...${NC}"
+echo -e "${PURPLE}Hey ${USER}, let's do this thing (setup your mac)...${NC}"
 
 # Make sure the bash profile file exists.
 FILE=~/.bash_profile
@@ -19,7 +16,6 @@ if ! [ -f "$FILE" ]; then
 fi
 
 echo
-# read -rp "Press any key to continue brew installation... " -n1 -s
 echo -e "${GREEN}Install brew and cask?${NC}"
 select yn in "Yes" "No"; do
     case $yn in
@@ -89,6 +85,7 @@ cp ./dotfiles/.bash_profile ~/.bash_profile
 source ~/.bash_profile
 
 # Final output
+echo -e "${YELLOW}"
 cat << "EOF"
 
                 _ _,---._
@@ -117,5 +114,6 @@ cat << "EOF"
        /            \              \   \
 
 ------------------------------------------------
-  + + + A W E S O M E  - A L L  D O N E ! + + +
++ + + A W E S O M E   -   A L L  D O N E ! + + +
 EOF
+echo -e "${NC}"

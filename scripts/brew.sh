@@ -1,11 +1,5 @@
 # Nowadays brew cask is installed by default when you install brew.
 # Only install brew if not already installed previously.
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-CYAN='\033[0;36m'
-NC='\033[0m'
-GREEN_TICK="${GREEN}\xE2\x9C\x94${NC}"
-
 if ! [ -x "$(command -v brew)" ]; then
   echo "installing brew..."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

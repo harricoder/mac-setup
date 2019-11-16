@@ -1,11 +1,5 @@
 # Install Apple Store programs (using the most excellent mas):
 # see https://github.com/mas-cli/mas
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-CYAN='\033[0;36m'
-NC='\033[0m'
-GREEN_TICK="${GREEN}\xE2\x9C\x94${NC}"
-
 if ! [ -x "$(command -v mas)" ]; then
   echo "installing mas..."
   brew install mas
