@@ -11,3 +11,6 @@ export NC='\033[0m'
 
 # UTF-8:
 export GREEN_TICK="${GREEN}\xE2\x9C\x94${NC}"
+
+# Other settings:
+export PROFILE_DIR="Configs"

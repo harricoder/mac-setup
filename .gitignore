@@ -1,0 +1,3 @@
+# Project specific gitignore.
+configs/profile/backgrounds/*
+configs/profile/*.png

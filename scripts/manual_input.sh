@@ -11,7 +11,7 @@ function man_prompt {
 
 man_prompt "Plug in iphone and turn off auto sync in itunes and photos"
 man_prompt "Copy across iTerm2 User profile"
-man_prompt "Update: Profile Image, Desktop Background, Screen saver"
+man_prompt "Update: Profile Image, Desktop Background and Screen saver"
 
 echo
 echo -e "${GREEN_TICK} Manual actions are all done.${NC}"
