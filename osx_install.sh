@@ -7,85 +7,35 @@
 source ./scripts/constants.sh
 
 echo
-echo -e "${PURPLE}Hey ${USER}, let's do this thing (setup your mac)...${NC}"
+echo -e "${PURPLE}Hey ${USER}, let's setup your mac...${NC}"
 
-# Make sure the bash profile file exists.
+# Make sure the bash profile file exists (needed for script process).
 FILE=~/.bash_profile
 if ! [ -f "$FILE" ]; then
   touch "${FILE}"
 fi
 
-echo
-echo -e "${GREEN}Install brew and cask?${NC}"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) ./scripts/brew.sh; break;;
-        No ) break;;
-    esac
-done
+function do_action() {
+  ACTION=$1
+  SCRIPT=$2
+  echo
+  echo -e "${GREEN}${ACTION}${NC}"
+  select yn in "Yes" "No"; do
+      case $yn in
+          Yes ) ./scripts/${SCRIPT}; break;;
+          No ) break;;
+      esac
+  done
+}
 
-echo
-echo -e "${GREEN}Install MAS?${NC}"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) ./scripts/mas.sh; break;;
-        No ) break;;
-    esac
-done
-
-echo
-echo -e "${GREEN}Install Node via nvm?${NC}"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) ./scripts/node.sh; break;;
-        No ) break;;
-    esac
-done
-
-echo
-echo -e "${GREEN}Install Programming language additionals?${NC}"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) ./scripts/prog_languages.sh; break;;
-        No ) break;;
-    esac
-done
-
-echo
-echo -e "${GREEN}Configure Git?${NC}"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) ./scripts/git.sh; break;;
-        No ) break;;
-    esac
-done
-
-echo
-echo -e "${GREEN}Copy dotfiles and configs?${NC}"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) ./scripts/dotfiles_config.sh; break;;
-        No ) break;;
-    esac
-done
-
-echo
-echo -e "${GREEN}Install zsh / prezto things?${NC}"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) ./scripts/zsh.sh; break;;
-        No ) break;;
-    esac
-done
-
-echo
-echo -e "${GREEN}Go through non-automated things?${NC}"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) ./scripts/manual_input.sh; break;;
-        No ) break;;
-    esac
-done
+do_action "Install brew and cask?" "brew.sh"
+do_action "Install MAS?" "mas.sh"
+do_action "Install Node via nvm?" "node.sh"
+do_action "Install Programming language additionals?" "prog_languages.sh"
+do_action "Configure Git?" "git.sh"
+do_action "Copy dotfiles and configs?" "dotfiles_config.sh"
+do_action "Install zsh / prezto things?" "zsh.sh"
+do_action "Go through non-automated things?" "manual_input.sh"
 
 # Final output
 echo
