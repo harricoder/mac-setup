@@ -6,6 +6,7 @@
 # TODO: could symlinks these?
 cp $PWD/dotfiles/.bash_profile ~/.bash_profile
 cp $PWD/dotfiles/.zshrc ~/.zshrc
+cp $PWD/dotfiles/.zpreztorc ~/.zpreztorc
 cp $PWD/dotfiles/.gitignore ~/.gitignore
 
 source ~/.bash_profile

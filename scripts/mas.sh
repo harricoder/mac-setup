@@ -26,14 +26,6 @@ mas install 462054704  # Microsoft Word (16.28)
 mas install 985367838  # Microsoft Outlook (16.28)
 mas install 462062816  # Microsoft PowerPoint (16.28)
 
-# Should be installed as part of Xcode - but check xcode tools are installed.
-if ! [ -x "$(command -v xcode-select)" ]; then
-  echo
-  echo "installing xcode-select tools..."
-  xcode-select --install
-fi
-echo "xcode tools are installed: $(xcode-select -v)"
-
 echo
 echo -e "${GREEN_TICK} All mas packages succesfully installed:${CYAN}"
 mas list

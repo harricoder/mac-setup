@@ -61,19 +61,19 @@ select yn in "Yes" "No"; do
 done
 
 echo
-echo -e "${GREEN}Install zsh / prezto things?${NC}"
+echo -e "${GREEN}Copy dotfiles and configs?${NC}"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) ./scripts/zsh.sh; break;;
+        Yes ) ./scripts/dotfiles_config.sh; break;;
         No ) break;;
     esac
 done
 
 echo
-echo -e "${GREEN}Copy dotfiles and configs?${NC}"
+echo -e "${GREEN}Install zsh / prezto things?${NC}"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) ./scripts/dotfiles_config.sh; break;;
+        Yes ) ./scripts/zsh.sh; break;;
         No ) break;;
     esac
 done
