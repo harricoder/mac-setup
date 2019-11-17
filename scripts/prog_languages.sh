@@ -1,5 +1,7 @@
+# General programming languages setup and tools.
+
 # Additional python things
-echo "installing python bits..."
+echo "installing python tools..."
 pip2 install --upgrade setuptools
 pip2 install --upgrade pip
 pip2 install --upgrade virtualenv
@@ -28,3 +30,7 @@ if ! [ "$(grep GOPATH ~/.bash_profile)" ]; then
   source ~/.bash_profile
 fi
 go get golang.org/x/tools/cmd/godoc
+
+# PHP?...anything else...?
+
+echo -e "${GREEN_TICK} Additional programming language setup tools installed.${NC}"

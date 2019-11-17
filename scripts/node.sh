@@ -13,6 +13,7 @@ echo "nvm is installed: $(nvm --version)"
 
 if ! [ "$(command -v node)" ]; then
   echo "installing node..."
+  source ~/.nvm/nvm.sh
   nvm install node --latest-npm
 fi
-echo "node is installed: $(node --version) with npm: $(npm --version)"
+echo -e "${GREEN_TICK} node is installed: $(node --version) with npm: $(npm --version)${NC}"

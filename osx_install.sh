@@ -43,7 +43,7 @@ select yn in "Yes" "No"; do
 done
 
 echo
-echo -e "${GREEN}Install Python, Go and other bits?${NC}"
+echo -e "${GREEN}Install Programming language additionals?${NC}"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) ./scripts/prog_languages.sh; break;;
@@ -52,7 +52,7 @@ select yn in "Yes" "No"; do
 done
 
 echo
-echo -e "${GREEN}Set up Git?${NC}"
+echo -e "${GREEN}Configure Git?${NC}"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) ./scripts/git.sh; break;;
@@ -70,6 +70,15 @@ select yn in "Yes" "No"; do
 done
 
 echo
+echo -e "${GREEN}Copy dotfiles and configs?${NC}"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) ./scripts/dotfiles_config.sh; break;;
+        No ) break;;
+    esac
+done
+
+echo
 echo -e "${GREEN}Go through non-automated things?${NC}"
 select yn in "Yes" "No"; do
     case $yn in
@@ -78,14 +87,9 @@ select yn in "Yes" "No"; do
     esac
 done
 
-# Other configs and dotfiles (overrites previous files in some cases)
-echo
-echo "copying dotfiles and configs..."
-cp ./dotfiles/.bash_profile ~/.bash_profile
-source ~/.bash_profile
-
 # Final output
-echo -e "${YELLOW}"
+echo
+echo -e "${YELLOW}- - - - - - EVERYTHING IS AWESOME! - - - - - -"
 cat << "EOF"
 
                 _ _,---._
@@ -114,6 +118,6 @@ cat << "EOF"
        /            \              \   \
 
 ------------------------------------------------
-+ + + A W E S O M E   -   A L L  D O N E ! + + +
++ + + G O O D  J O B  -   A L L  D O N E ! + + +
 EOF
 echo -e "${NC}"

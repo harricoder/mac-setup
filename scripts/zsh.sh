@@ -16,3 +16,5 @@ if ! [ -d "${HOME}/.zprezto" ]; then
     done
     '
 fi
+
+echo -e "${GREEN_TICK} ZSH and prezto successfully configured.${NC}"
