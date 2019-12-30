@@ -4,7 +4,7 @@
 # are just too awkward to do so at the moment.
 function man_prompt {
   echo
-  echo $1
+  echo -e "${YELLOW}$1${NC}"
   read -rp "Press any key to continue... " -n1 -s
   echo
 }

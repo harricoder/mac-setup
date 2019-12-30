@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # NVM / Node (requires .bash_profile)
 source ~/.bash_profile
 if [ -f "~/.nvm/nvm.sh" ]; then

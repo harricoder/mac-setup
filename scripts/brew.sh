@@ -1,5 +1,5 @@
 # Nowadays brew cask is installed by default when you install brew.
-# Will be installed as part of Xcode - but some packages need this before.
+# Will be installed as part of Xcode - but brew needs this.
 if ! [ -x "$(command -v xcode-select)" ]; then
   echo
   echo "installing xcode-select tools..."
