@@ -81,6 +81,7 @@ brew install wget
 brew install sshfs
 brew install golang
 brew install tree
+brew install cloc
 brew install zsh
 brew install zsh-completions
 brew install bash-completion
