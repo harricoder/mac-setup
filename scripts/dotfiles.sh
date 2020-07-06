@@ -1,16 +1,19 @@
-# Copy across dotfiles and configs (may want to symlink instead)
-# Other configs and dotfiles (overrites previous files in some cases)
-# This actually dupes some dotfiles - but that does not really matter,
-# better to be safer than sorry?
+#!/usr/bin/env bash
+#
+# Copy across dotfiles and configs (warning this overrites, does not symlink).
 # TODO: how to import iTerm profile via script?
 
-# TODO: could symlinks these?
-cp $PWD/dotfiles/.bash_profile ~/.bash_profile
-cp $PWD/dotfiles/.zshrc ~/.zshrc
-cp $PWD/dotfiles/.zpreztorc ~/.zpreztorc
-cp $PWD/dotfiles/.gitignore ~/.gitignore
+# Add warning (in prep for catalina).
+[ "${SHELL##/*/}" != "zsh" ] && echo 'You might need to change default shell to zsh: `chsh -s /bin/zsh`'
 
+# All config files which will be symlinked into the default ~/. location.
+find ./dotfiles -type f -name ".*" -maxdepth 1 -exec cp {} ~/ \;
+#ls -1AF ./dotfiles | grep -v /$ | xargs -I{} -n1 ln -b -s ./dotfiles/{} .
+#ln -fs ~/dotfiles/zsh/.zshrc ~/
+
+#exec $SHELL
 source ~/.bash_profile
+source ~/.zshrc
 
 # Profile Config dir to copy (just check nested backgrounds folder exists)
 USER="$(whoami)"
@@ -27,7 +30,7 @@ fi
 function copy_or_use_default() {
   FILE_NAME=$1
 
-  # If the file is JSON replace occurances of USER_NAME with actual user.
+  # If the file is JSON replace occurrences of USER_NAME with actual user.
   # This is not a great way to do it - might be better to embed env variable?
   if [[ $FILE_NAME == *".json" ]]; then
     if [ -f "${BASE_DIR}${FILE_NAME}" ]; then
