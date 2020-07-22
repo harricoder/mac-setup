@@ -1,4 +1,7 @@
+#!/usr/bin/env bash
+#
 # Zsh stuff
+#
 # Note dotfiles need to be copied before this runs to ensure the default
 # symlinked files are not used.
 FILE=${HOME}/.zshrc

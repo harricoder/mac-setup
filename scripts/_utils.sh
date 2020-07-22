@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #
 # General constants and utils file
-# Should be sourced in to script: source ./utils.sh
+#
+# Should be sourced in to script: source ./scripts/_utils.sh
 
 # Colours
 export RED='\033[0;31m'
@@ -12,49 +13,35 @@ export CYAN='\033[0;36m'
 export WHITE='\033[1;37m'
 export NC='\033[0m'
 
-# UTF-8:
+# Green Tick:
 export GREEN_TICK="${GREEN}\xE2\x9C\x94${NC}"
 
-# Other settings:
+# Config folder name for location of profile / pics / etc: i.e. ~/Configs:
 export PROFILE_DIR="Configs"
 
-answer_is_yes() {
-    [[ "$REPLY" =~ ^[Yy]$ ]] \
-        && return 0 \
-        || return 1
-}
-
+# Utility functions:
 ask_for_confirmation() {
-    print_question "$1 (y/n) "
-    read -n 1
-    printf "\n"
+  print_question "$1 (y/n)"
+  read -n 1 -r -s -t 30
+  if [[ ! "$REPLY" =~ ^[Yy]$ ]]; then
+    echo
+    exit 1
+  fi
+  echo
 }
 
 print_question() {
-    # Print output in yellow
-    printf "\e[0;33m  [?] $1\e[0m"
-}
-
-print_result() {
-    [ $1 -eq 0 ] \
-        && print_success "$2" \
-        || print_error "$2"
-
-    [ "$3" == "true" ] && [ $1 -ne 0 ] \
-        && exit
+  echo -e "${YELLOW}  [?] $1 ${NC}"
 }
 
 print_success() {
-    # Print output in green
-    printf "\e[0;32m  [✔] $1\e[0m\n"
+  echo -e "${GREEN}  [✔] $1 ${NC}"
 }
 
 print_error() {
-    # Print output in red
-    printf "\e[0;31m  [✖] $1 $2\e[0m\n"
+  echo -e "${RED}  [✖] $1 ${NC}"
 }
 
 print_info() {
-    # Print output in purple
-    printf "\n\e[0;35m $1\e[0m\n\n"
+  echo -e "${PURPLE} $1 ${NC}"
 }

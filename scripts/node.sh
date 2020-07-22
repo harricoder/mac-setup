@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
+#
 # NVM / Node (requires .bash_profile)
+
 source ~/.bash_profile
 if [ -f "~/.nvm/nvm.sh" ]; then
     source ~/.nvm/nvm.sh
@@ -17,4 +19,4 @@ if ! [ "$(command -v node)" ]; then
   source ~/.nvm/nvm.sh
   nvm install node --latest-npm
 fi
-echo -e "${GREEN_TICK} node is installed: $(node --version) with npm: $(npm --version)${NC}"
+echo -e "${GREEN_TICK} node successfully installed: $(node --version) with npm: $(npm --version)${NC}"
