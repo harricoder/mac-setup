@@ -1,5 +1,10 @@
+#!/usr/bin/env bash
+#
+# Brew and brew cask setup.
+source ./scripts/_utils.sh
+
 # Nowadays brew cask is installed by default when you install brew.
-# Will be installed as part of Xcode - but brew needs this.
+# This will be installed as part of Xcode - but brew needs this.
 if ! [ -x "$(command -v xcode-select)" ]; then
   echo
   echo "installing xcode-select tools..."
@@ -10,9 +15,31 @@ echo "xcode tools are installed: $(xcode-select -v)"
 # Only install brew if not already installed previously.
 if ! [ -x "$(command -v brew)" ]; then
   echo "installing brew..."
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   echo
 fi
+
+# Just install a normal Brew
+function install() {
+  brew install "$1"
+  RESULT=$?
+  if [ $RESULT -eq 0 ]; then
+    print_success "Installed: $1"
+  else
+    print_error "Failed to install: $1"
+  fi
+}
+
+# Install a brew cask
+function install_cask() {
+  brew cask install "$1"
+  RESULT=$?
+  if [ $RESULT -eq 0 ]; then
+    print_success "Installed: $1"
+  else
+    print_error "Failed to install: $1"
+  fi
+}
 
 echo "brew is installed: $(brew -v)"
 echo "brew updating..."
@@ -22,72 +49,97 @@ brew tap homebrew/cask-drivers
 # Homebrew packages (cask only)
 echo
 echo "Installing Homebrew Cask packages..."
-brew cask install java
-brew cask install google-chrome
-brew cask install iterm2
-brew cask install sequel-pro
-brew cask install transmit
-brew cask install postman
-brew cask install sourcetree
-brew cask install balenaetcher
-brew cask install calibre
-brew cask install ccleaner
-brew cask install cinebench
-brew cask install osxfuse
-brew cask install spotify
-brew cask install sublime-text
-brew cask install jetbrains-toolbox
-brew cask install vlc
-brew cask install yed
-brew cask install sketch
-brew cask install openemu
-brew cask install dolphin
-brew cask install jet
-brew cask install wireshark
-brew cask install virtualbox
-brew cask install virtualbox-extension-pack
-brew cask install parallels
-brew cask install vagrant
-brew cask install vagrant-manager
-brew cask install docker
-brew cask install logitech-options
-brew cask install blender
-brew cask install unity-hub
-brew cask install adobe-creative-cloud
+install_cask java
+install_cask google-chrome
+install_cask iterm2
+install_cask sequel-pro
+install_cask transmit
+install_cask postman
+install_cask sourcetree
+install_cask github
+install_cask balenaetcher
+install_cask calibre
+install_cask ccleaner
+install_cask cinebench
+install_cask osxfuse
+install_cask spotify
+install_cask sublime-text
+install_cask jetbrains-toolbox
+install_cask vlc
+install_cask yed
+install_cask sketch
+install_cask openemu
+install_cask dolphin
+install_cask jet
+install_cask wireshark
+install_cask parallels
+install_cask logitech-options
+install_cask blender
+install_cask unity-hub
+install_cask adobe-creative-cloud
+install_cask elgato-stream-deck
+
+# Virtualbox requires special permissions
+install_cask virtualbox
+install_cask virtualbox-extension-pack
+install_cask vagrant
+install_cask vagrant-manager
+install_cask docker
+
 echo
-echo -e "${GREEN_TICK} All Homebrew Cask packages succesfully installed:${CYAN}"
+echo -e "${GREEN_TICK} These Homebrew Cask packages successfully installed:${CYAN}"
 brew cask list -1
 echo -e "${NC}"
 
+# Check casks look to be correct?
+ask_for_confirmation "Do these all match expected?"
 
 # Homebrew packages (non-cask)
 #   - sshfs needs osxfuse
-#   - mas also gets installed (but in the mas.sh script)
 echo
 echo "Installing Homebrew packages..."
-brew install git
-brew install ack
-brew install httpie
-brew install python@2
-brew install python
-brew install cookiecutter
-brew install php
-brew install composer
-brew install ruby
-brew install htop
-brew install graphviz
-brew install sshuttle
-brew install wget
-brew install sshfs
-brew install golang
-brew install tree
-brew install cloc
-brew install zsh
-brew install zsh-completions
-brew install bash-completion
-brew install docker-completion
+brew update
+brew cleanup
+install mas
+install git
+install ack
+install httpie
+install pyenv
+install pipenv
+install cookiecutter
+install php
+install composer
+install ruby
+install htop
+install graphviz
+install sshuttle
+install wget
+install sshfs
+install asciinema
+install ssh-copy-id
+install golang
+install tree
+install cloc
+install zsh
+install zsh-completions
+install zsh-syntax-highlighting
+install bash-completion
+install docker-completion
+install vim
+install grep
+install packer
+install terraform
+install vault
+install terraform-inventory
+install terraform-provisioner-ansible
+install awscli
+install nmap
+
+# Clean up and confirm packages installed
+brew cleanup
 echo
-echo -e "${GREEN_TICK} All Homebrew packages succesfully installed:${CYAN}"
+echo -e "${GREEN_TICK} These Homebrew packages successfully installed:${CYAN}"
 brew leaves
 echo -e "${NC}"
+ask_for_confirmation "Do these all match expected?"
 echo
