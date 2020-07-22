@@ -3,11 +3,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Aliases
-# TODO: turns out this seems to mess with brew's symlinks (find a better way)
-alias python=/usr/local/bin/python3
-alias pip=/usr/local/bin/pip3
+# Python
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
-# Environent
+# Environment
 export GOPATH="$HOME/Projects/Go"
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
