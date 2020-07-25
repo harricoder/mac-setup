@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # General constants and utils file
 #
-# Should be sourced in to script: source ./scripts/_utils.sh
+# Should be sourced in to script: source ./scripts/_utils.zsh
 
 # Colours
 export RED='\033[0;31m'
@@ -22,10 +22,9 @@ export PROFILE_DIR="Configs"
 # Utility functions:
 ask_for_confirmation() {
   print_question "$1 (y/n)"
-  read -n 1 -r -s -t 30
+  read -k 1 REPLY
   if [[ ! "$REPLY" =~ ^[Yy]$ ]]; then
-    echo
-    exit 1
+    print_error_exit "Exited program."
   fi
   echo
 }
@@ -43,5 +42,10 @@ print_error() {
 }
 
 print_info() {
-  echo -e "${PURPLE} $1 ${NC}"
+  echo -e "${PURPLE}$1${NC}"
+}
+
+print_error_exit() {
+  print_error $1
+  exit 1
 }

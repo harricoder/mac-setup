@@ -1,17 +1,24 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # Warning:
 #   Please read all the scripts located in `./scripts` before running.
 #   Each script asks you for confirmation before it does anything, but
 #   reading them beforehand will mean you understand what is about to happen.
-#
-source ./scripts/_utils.sh
+# cat /etc/shells
+source ./scripts/_utils.zsh
 
 echo
 echo -e "${PURPLE}Hey ${USER}, let's setup your mac...${NC}"
 
-# Make sure the bash profile file exists (needed for script process).
-FILE=~/.bash_profile
+# Make sure the zsh profile file exists (needed for script process).
+# For Catalina the default is zsh - start assuming that only zsh exists
+# (even though the usual 'old' version of bash still currently exists.
+# Apple have hinted that it may go away at some point....like USB-A,
+# headphone sockets...etc etc
+# Add error for non-catlina or zsh usage.
+[ "${SHELL##/*/}" != "zsh" ] && print_error_exit 'You must be using zsh to use this script.'
+
+FILE=~/.zshrc
 if ! [ -f "$FILE" ]; then
   touch "${FILE}"
 fi
@@ -25,6 +32,10 @@ function do_action() {
     case $yn in
     Yes)
       ./scripts/"${SCRIPT}"
+      exit_status=$?
+      if [ $exit_status -eq 1 ]; then
+          exit 1
+      fi
       break
       ;;
     No) break ;;
@@ -33,16 +44,16 @@ function do_action() {
   done
 }
 
-do_action "Install brew and cask?" "brew.sh"
-do_action "Install MAS?" "mas.sh"
-do_action "Install Node via nvm?" "node.sh"
-do_action "Install Python 3?" "python.sh"
-do_action "Configure Go?" "go.sh"
-do_action "Configure Git?" "git.sh"
-do_action "Copy dotfiles and configs? - (this may overwrite existing files in your home directory)" "dotfiles.sh"
-do_action "Install zsh / prezto things?" "zsh.sh"
-do_action "Adjust general Mac OSX settings?" "mac.sh"
-do_action "Go through non-automated things?" "manual.sh"
+do_action "Install brew and cask?" "brew.zsh"
+do_action "Install MAS?" "mas.zsh"
+do_action "Install Node via nvm?" "node.zsh"
+do_action "Install Python 3?" "python.zsh"
+do_action "Configure Go?" "go.zsh"
+do_action "Configure Git?" "git.zsh"
+do_action "Copy dotfiles and configs? - (this may overwrite existing files in your home directory)" "dotfiles.zsh"
+do_action "Install zsh / prezto things?" "zsh.zsh"
+do_action "Adjust general Mac OSX settings?" "mac.zsh"
+do_action "Go through non-automated things?" "manual.zsh"
 
 # Final output (script complete)
 echo

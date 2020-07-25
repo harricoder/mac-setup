@@ -1,16 +1,15 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
-# NVM / Node (requires .bash_profile)
-
-source ~/.bash_profile
+# NVM / Node (requires .zshrc)
+source ~/.zshrc
 if [ -f "~/.nvm/nvm.sh" ]; then
     source ~/.nvm/nvm.sh
 fi
 
 if ! [ "$(command -v nvm)" ]; then
   echo "installing nvm..."
+  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
   source ~/.nvm/nvm.sh
-  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
 fi
 echo "nvm is installed: $(nvm --version)"
 

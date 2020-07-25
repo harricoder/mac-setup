@@ -1,8 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # Install Python 3 using pyenv
 #
 # https://opensource.com/article/19/5/python-3-default-mac#what-to-do
+source ./scripts/_utils.zsh
+
 wanted_python_version="3.7.7"
 
 python_version="$(python -V 2>&1)"
@@ -21,9 +23,8 @@ python -V
 pip -V
 
 # Check that Python 3 now is installed correctly before proceeding.
-if [ "$python_version" != "Python $wanted_python_version" ]; then
-  echo "Currently installed python version: $python_version does not match wanted $wanted_python_version"
-  exit 1
+if [ "$(python -V 2>&1)" != "Python $wanted_python_version" ]; then
+  print_error_exit "Currently installed python version: $python_version does not match wanted $wanted_python_version"
 fi
 
 # Update pip and setuptools

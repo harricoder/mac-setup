@@ -1,13 +1,11 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # Copy across dotfiles and configs (warning this overrites, does not symlink).
 #
 # TODO: how to import iTerm profile via script?
-# Add warning (in prep for catalina).
-[ "${SHELL##/*/}" != "zsh" ] && echo 'You might need to change default shell to zsh: `chsh -s /bin/zsh`'
 
 # All config files which will be symlinked into the default ~/. location.
-find ./dotfiles -type f -name ".*" -maxdepth 1 -exec cp {} ~/ \;
+#find ./dotfiles -type f -name ".*" -maxdepth 1 -exec cp {} ~/ \;
 #ls -1AF ./dotfiles | grep -v /$ | xargs -I{} -n1 ln -b -s ./dotfiles/{} .
 #ln -fs ~/dotfiles/zsh/.zshrc ~/
 

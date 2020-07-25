@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # Install Apple Store programs (using the most excellent mas):
 #
@@ -11,11 +11,12 @@ echo "currently installed mas version: $(mas version)"
 
 # TODO: Perhaps do this via the` mas signin` feature if it ever gets fixed?
 echo -e "${YELLOW}"
-read -rp "Please ensure you are signed into to Apple App Store before continuing... " -n1 -s
+echo "Please ensure you are signed into to Apple App Store before continuing... "
+read -k 1 -s
 
 echo -e "${NC}"
-mas install 497799835  # Xcode
 mas install 425424353  # The Unarchiver
+mas install 497799835  # Xcode
 mas install 552383089  # Dashlane
 mas install 803453959  # Slack
 mas install 979538493  # Go for Gmail

@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # Brew and brew cask setup.
-source ./scripts/_utils.sh
+source ./scripts/_utils.zsh
 
 # Nowadays brew cask is installed by default when you install brew.
 # This will be installed as part of Xcode - but brew needs this.
@@ -46,9 +46,54 @@ echo "brew updating..."
 brew update
 brew tap homebrew/cask-drivers
 
+# Homebrew packages (non-cask)
+echo
+print_info "Installing Homebrew packages..."
+brew update
+brew cleanup
+install mas
+install git
+install ack
+install httpie
+install pyenv
+install pipenv
+install cookiecutter
+install php
+install composer
+install ruby
+install htop
+install graphviz
+install sshuttle
+install wget
+install asciinema
+install ssh-copy-id
+install golang
+install tree
+install cloc
+install zsh-completions
+install zsh-syntax-highlighting
+install docker-completion
+install vim
+install grep
+install packer
+install terraform
+install vault
+install terraform-inventory
+install terraform-provisioner-ansible
+install awscli
+install nmap
+
+# Clean up and confirm packages installed
+brew cleanup
+echo
+echo -e "${GREEN_TICK} These Homebrew packages successfully installed:${CYAN}"
+brew leaves
+echo -e "${NC}"
+ask_for_confirmation "Do these all match expected?"
+
 # Homebrew packages (cask only)
 echo
-echo "Installing Homebrew Cask packages..."
+print_info "Installing Homebrew Cask packages..."
 install_cask java
 install_cask google-chrome
 install_cask iterm2
@@ -61,7 +106,6 @@ install_cask balenaetcher
 install_cask calibre
 install_cask ccleaner
 install_cask cinebench
-install_cask osxfuse
 install_cask spotify
 install_cask sublime-text
 install_cask jetbrains-toolbox
@@ -93,53 +137,11 @@ echo -e "${NC}"
 
 # Check casks look to be correct?
 ask_for_confirmation "Do these all match expected?"
-
-# Homebrew packages (non-cask)
-#   - sshfs needs osxfuse
 echo
-echo "Installing Homebrew packages..."
-brew update
-brew cleanup
-install mas
-install git
-install ack
-install httpie
-install pyenv
-install pipenv
-install cookiecutter
-install php
-install composer
-install ruby
-install htop
-install graphviz
-install sshuttle
-install wget
+
+# This requires a specific order (one cask and one normal brew)
+echo
+print_info "Installing osxfuse and sshfs..."
+install_cask osxfuse
 install sshfs
-install asciinema
-install ssh-copy-id
-install golang
-install tree
-install cloc
-install zsh
-install zsh-completions
-install zsh-syntax-highlighting
-install bash-completion
-install docker-completion
-install vim
-install grep
-install packer
-install terraform
-install vault
-install terraform-inventory
-install terraform-provisioner-ansible
-install awscli
-install nmap
-
-# Clean up and confirm packages installed
-brew cleanup
-echo
-echo -e "${GREEN_TICK} These Homebrew packages successfully installed:${CYAN}"
-brew leaves
-echo -e "${NC}"
-ask_for_confirmation "Do these all match expected?"
 echo

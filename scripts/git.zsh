@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # Git and git configs.
 echo "setting up git..."
@@ -8,10 +8,10 @@ git config --global core.excludesfile ~/.gitignore
 git config --global core.editor "vim"
 
 if ! [ "$(grep 'email =' ~/.gitconfig)" ]; then
-  read -rp "Enter Your Git display name: "  name
+  read "name?Enter Your Git display name: "
   git config --global user.name "$name"
 
-  read -rp "Enter Your Git email address: "  email
+  read  "email?Enter Your Git email address: "
   git config --global user.email "$email"
 
   echo "setting pull strategy to fast-forward only..."

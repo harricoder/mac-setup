@@ -1,6 +1,6 @@
 # mac-setup
 
-My OSX setup and dotfiles.
+My OSX setup and dotfiles for >= Catalina (only for zsh).
 
 These are a collection of my personal dotfiles and configurations. There are
 plenty of other more 'shareable' repo's out there for dotfile usage (meaning
@@ -24,7 +24,7 @@ Licensed under the MIT license.
 
 **Before running any commands, you must edit files according to your needs.**
 
-So update packages in `scripts/brew.sh` and `scripts/mas.sh` etc...just have
+So update packages in `scripts/brew.zsh` and `scripts/mas.zsh` etc...just have
 a general nosy around before running - so you know what is going to happen.
 
 ```
@@ -45,31 +45,31 @@ the Mac options to take effect, you will probably just have to restart anyways.
 
 ### What's included ?
 
-+ Homebrew: `brew.sh`
++ Homebrew: `brew.zsh`
   + Installs Homebrew AND brew install's all my currently used packages
   + Uses homebrew-cask to install all my applications
-+ MAS `mas.sh`
++ MAS `mas.zsh`
   + Uses the excellent mas to install apps from the apple app store
-+ Node `node.sh`
++ Node `node.zsh`
   + Install nvm
   + Latest version of node via nvm
 + Programming Languages
-  + Python 3 (via pyenv) `python.sh`
-  + Configure Go (alreayd installed via brew) `go.sh`
+  + Python 3 (via pyenv) `python.zsh`
+  + Configure Go (alreayd installed via brew) `go.zsh`
   + more...
-+ Git `git.sh`
++ Git `git.zsh`
   + Git config
   + Global gitignore
-+ Dotfiles `dotfiles.sh`
++ Dotfiles `dotfiles.zsh`
   + Various dotfiles (cp these - it does not symlink)
   + Creates iTerm2 preferences (need to manually import profile)
   + Copies profile pic and background images
-+ ZSH `zsh.sh`
++ ZSH `zsh.zsh`
   + Installs zsh
   + Sets up zprezto
-+ MacOS `mac.sh`
++ MacOS `mac.zsh`
   + Installs applications via the Mac App Store
-+ Manual reminders `manual.sh`
++ Manual reminders `manual.zsh`
   + Anything that can't be automated (will get a reminder to do)
   + Things that can be automated (but prefer to re-do, like ssh key creation)
     will also get a reminder for.

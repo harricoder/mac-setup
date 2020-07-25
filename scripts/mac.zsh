@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #
 # Set up OSX preferences
 #
@@ -6,13 +6,9 @@
 # These settings are normally only really required on a fresh mac install -
 # or if you update them for some reason.
 ###########################################
-# CONFIG
-TIMEZONE="Europe/London"
-
-###########################################
-
 echo "This script will change settings in OSX"
-read -rp "Press any key to continue... " -n1 -s
+echo "Press any key to continue... "
+read -k 1 -s
 
 echo ""
 echo "Please enter your password..."
@@ -91,7 +87,7 @@ sudo pmset -c womp 1
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
-
+echo " - Adjusting screen settings"
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
@@ -106,7 +102,7 @@ defaults write com.apple.screencapture type -string "png"
 ###############################################################################
 # Keyboard and Mouse                                                          #
 ###############################################################################
-
+echo " - Adjusting keyboard and mouse settings"
 # Disable “natural” inverted scrolling
 defaults write -g com.apple.swipescrolldirection -bool NO
 
@@ -174,9 +170,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 ###############################################################################
 # Misc                                                                        #
 ###############################################################################
-
-# Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone $TIMEZONE > /dev/null
 
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
