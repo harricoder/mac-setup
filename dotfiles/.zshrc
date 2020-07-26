@@ -17,9 +17,6 @@ fi
 
 # Zsh Completion
 if type brew &>/dev/null; then
-  # Additional changes as advised by zsh-completions (fix permissions)
-  compaudit | xargs chmod g-w
-
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
   autoload -Uz compinit
