@@ -55,7 +55,7 @@ the Mac options to take effect, you will probably just have to restart anyways.
   + Latest version of node via nvm
 + Programming Languages
   + Python 3 (via pyenv) `python.zsh`
-  + Configure Go (alreayd installed via brew) `go.zsh`
+  + Configure Go (already installed via brew) `go.zsh`
   + more...
 + Git `git.zsh`
   + Git config
