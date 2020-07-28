@@ -63,7 +63,6 @@ install composer
 install ruby
 install htop
 install graphviz
-install sshuttle
 install wget
 install asciinema
 install ssh-copy-id
