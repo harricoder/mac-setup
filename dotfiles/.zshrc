@@ -29,5 +29,6 @@ export GOPATH="$HOME/Projects/Go"
 # Aliases
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 
-# Load Prezto
+# Load Prezto and other stuff
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

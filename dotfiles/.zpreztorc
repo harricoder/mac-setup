@@ -1,8 +1,7 @@
-# ZSH User Configs
+# ZSH User Configs - included modules
 zstyle ':prezto:load' pmodule \
   'environment' \
   'git' \
-  'autosuggestions' \
   'terminal' \
   'editor' \
   'history' \
@@ -10,7 +9,8 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt'
+  'prompt' \
+  'autosuggestions'
 
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
@@ -18,5 +18,5 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'vi'
 
-# Auto set to 'off' on dumb terminals.
+# Chosen theme
 zstyle ':prezto:module:prompt' theme 'sorin'

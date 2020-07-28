@@ -4,10 +4,8 @@
 #
 # TODO: how to import iTerm profile via script?
 
-# All config files which will be symlinked into the default ~/. location.
-#find ./dotfiles -type f -name ".*" -maxdepth 1 -exec cp {} ~/ \;
-#ls -1AF ./dotfiles | grep -v /$ | xargs -I{} -n1 ln -b -s ./dotfiles/{} .
-#ln -fs ~/dotfiles/zsh/.zshrc ~/
+# All config files which will be copied into the default ~/. location.
+find ./dotfiles -type f -name ".*" -maxdepth 1 -exec cp {} ~/ \;
 
 # Profile Config dir to copy (just check nested backgrounds folder exists)
 USER="$(whoami)"
