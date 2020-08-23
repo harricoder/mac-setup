@@ -3,10 +3,10 @@
 My OSX setup and dotfiles for >= Catalina (only for zsh).
 
 These are a collection of my personal dotfiles and configurations. There are
-plenty of other more 'shareable' repo's out there for dotfile usage (meaning
+plenty of other more 'shareable' repos out there for dotfile usage (meaning
 I probably won't accept pull requests unless I really want the changes myself,
 nothing personal). There may be things/ideas worth copying here (I was
-heavily inspired by existing repo's on github) - so knock yourself out.
+heavily inspired by existing repos on github) - so knock yourself out.
 
 The basic usage is quite simple, run `./osx_install` and it asks you if you 
 want to execute each 'module'. This is however really structured in a way which

@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 #
-# Copy across dotfiles and configs (warning this overrites, does not symlink).
+# Copy across dotfiles and configs (warning this overwrites - does not symlink!).
 #
 # TODO: how to import iTerm profile via script?
 
