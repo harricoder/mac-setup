@@ -81,6 +81,8 @@ install terraform-inventory
 install terraform-provisioner-ansible
 install awscli
 install nmap
+install aircrack-ng
+install gnupg
 
 # Clean up and confirm packages installed
 brew cleanup
@@ -121,6 +123,8 @@ install_cask blender
 install_cask unity-hub
 install_cask adobe-creative-cloud
 install_cask elgato-stream-deck
+install_cask suspicious-package
+install_cask aerial
 
 # Virtualbox requires special permissions
 install_cask virtualbox
