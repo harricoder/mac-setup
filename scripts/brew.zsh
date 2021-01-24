@@ -58,7 +58,6 @@ install awscli
 install cloc
 install composer
 install cookiecutter
-install docker-completion
 install git
 install gnupg
 install golang
@@ -68,12 +67,12 @@ install htop
 install httpie
 install mas
 install nmap
-install packer
 install php
 install pipenv
 install pyenv
 install ruby
 install ssh-copy-id
+install packer
 install terraform
 install terraform-inventory
 install terraform-provisioner-ansible
@@ -83,6 +82,11 @@ install vim
 install wget
 install zsh-completions
 install zsh-syntax-highlighting
+install tldr
+install jq
+install archey
+install watch
+install siege
 
 # Clean up and confirm packages installed
 brew cleanup
@@ -125,13 +129,13 @@ install_cask unity-hub
 install_cask vlc
 install_cask wireshark
 install_cask yed
+install_cask roland-quad-capture-usb-driver
 
 # Virtualbox requires special permissions
 install_cask virtualbox
 install_cask virtualbox-extension-pack
 install_cask vagrant
 install_cask vagrant-manager
-install_cask docker
 
 echo
 echo -e "${GREEN_TICK} These Homebrew Cask packages successfully installed:${CYAN}"
@@ -141,6 +145,14 @@ echo -e "${NC}"
 # Check casks look to be correct?
 ask_for_confirmation "Do these all match expected?"
 echo
+
+# Install docker, kubectl and minikube in specific order
+echo
+print_info "Installing docker, kubectl and minikube..."
+install_cask docker
+install docker-completion
+install kubernetes-cli
+install minikube
 
 # This requires a specific order (one cask and one brew formulae)
 echo
