@@ -30,6 +30,7 @@ mas install 462054704   # Microsoft Word 365
 mas install 985367838   # Microsoft Outlook 365
 mas install 462062816   # Microsoft PowerPoint 365
 mas install 1284863847  # Unsplash Wallpapers
+mas install 1518425043  # Boop
 
 echo
 echo -e "${GREEN_TICK} All mas packages successfully installed:${CYAN}"
