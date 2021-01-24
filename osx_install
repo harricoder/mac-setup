@@ -49,6 +49,7 @@ do_action "Install MAS?" "mas.zsh"
 do_action "Install Node via nvm?" "node.zsh"
 do_action "Install Python 3?" "python.zsh"
 do_action "Configure Go?" "go.zsh"
+do_action "Configure Minikube?" "minikube.zsh"
 do_action "Configure Git?" "git.zsh"
 do_action "Copy dotfiles and configs? - (this may overwrite existing files in your home directory)" "dotfiles.zsh"
 do_action "Install zsh / prezto things?" "zsh.zsh"
@@ -89,3 +90,6 @@ cat <<"EOF"
 + + + G O O D  J O B  -   A L L  D O N E ! + + +
 EOF
 echo -e "${NC}"
+
+# Also display a nice output of current apple system stats using archey
+archey
