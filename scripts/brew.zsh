@@ -32,7 +32,7 @@ function install() {
 
 # Install a brew cask
 function install_cask() {
-  brew cask install "$1"
+  brew install --cask "$1"
   RESULT=$?
   if [ $RESULT -eq 0 ]; then
     print_success "Installed: $1"
@@ -142,7 +142,7 @@ echo -e "${NC}"
 ask_for_confirmation "Do these all match expected?"
 echo
 
-# This requires a specific order (one cask and one normal brew)
+# This requires a specific order (one cask and one brew formulae)
 echo
 print_info "Installing osxfuse and sshfs..."
 install_cask osxfuse
