@@ -139,7 +139,7 @@ install_cask vagrant-manager
 
 echo
 echo -e "${GREEN_TICK} These Homebrew Cask packages successfully installed:${CYAN}"
-brew cask list -1
+brew list --cask -1
 echo -e "${NC}"
 
 # Check casks look to be correct?
