@@ -5,14 +5,14 @@
 # https://opensource.com/article/19/5/python-3-default-mac#what-to-do
 source ./scripts/_utils.zsh
 
-wanted_python_version="3.7.7"
+wanted_python_version="3.8.7"
 
 python_version="$(python -V 2>&1)"
 if [ "$python_version" != "Python $wanted_python_version" ]; then
   echo "installing python 3 via pyenv..."
-  pyenv install 3.7.7
+  pyenv install "$wanted_python_version"
 
-  pyenv global 3.7.7
+  pyenv global "$wanted_python_version"
   pyenv version
 
   eval "$(pyenv init -)"
@@ -28,7 +28,7 @@ if [ "$(python -V 2>&1)" != "Python $wanted_python_version" ]; then
 fi
 
 # Update pip and setuptools
-pip3 install --upgrade pip setuptools
+pip3 install --upgrade pip setuptools wheel
 
 # Install Ansible (just for python 3)
 if ! [ "$(command -v ansible)" ]; then
