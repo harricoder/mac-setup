@@ -75,7 +75,6 @@ install ssh-copy-id
 install packer
 install terraform
 install terraform-inventory
-install terraform-provisioner-ansible
 install tree
 install vault
 install vim
