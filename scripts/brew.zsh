@@ -83,6 +83,7 @@ install wget
 install zsh-completions
 install zsh-syntax-highlighting
 install tldr
+install java
 install jq
 install archey
 install watch
@@ -111,7 +112,6 @@ install_cask elgato-stream-deck
 install_cask github
 install_cask google-chrome
 install_cask iterm2
-install_cask java
 install_cask jet
 install_cask jetbrains-toolbox
 install_cask logitech-options
