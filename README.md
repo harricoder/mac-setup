@@ -89,6 +89,14 @@ https://github.com/mas-cli/mas
 
 There are many other alternative to the above, so also check them out too.
 
+## Works with:
+
+:x: <= Mojave
+
+✅   Catalina
+
+✅   BigSur
+
 ## Warranty:
 
 User beware, there is no warranty or guarantee that using these scripts won't 
