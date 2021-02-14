@@ -93,9 +93,9 @@ There are many other alternative to the above, so also check them out too.
 
 :x: <= Mojave
 
-✅   Catalina
+✅  - Catalina
 
-✅   BigSur
+✅  - BigSur
 
 ## Warranty:
 
