@@ -65,6 +65,9 @@ install graphviz
 install grep
 install htop
 install httpie
+install jpegoptim
+install optipng
+install pngquant
 install mas
 install nmap
 install php
