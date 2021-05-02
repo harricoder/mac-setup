@@ -161,6 +161,6 @@ install minikube
 # This requires a specific order (one cask and one brew formulae)
 echo
 print_info "Installing osxfuse and sshfs..."
-install_cask osxfuse
-install sshfs
+install_cask macfuse
+install gromgit/fuse/sshfs
 echo
