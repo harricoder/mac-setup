@@ -186,6 +186,9 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 #echo " Finder: show hidden files by default"
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
+# Allow OpenEMU to function properly
+xattr -d com.apple.quarantine /Applications/OpenEmu.app
+
 
 echo
 echo -e "${GREEN_TICK} Settings have been applied (restart once script has finished).${NC}"

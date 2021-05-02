@@ -130,8 +130,10 @@ install_cask transmit
 install_cask unity-hub
 install_cask vlc
 install_cask wireshark
-install_cask yed
+install_cask drawio
 install_cask roland-quad-capture-usb-driver
+install_cask pixel-picker
+install_cask visual-studio-code
 
 # Virtualbox requires special permissions
 install_cask virtualbox
