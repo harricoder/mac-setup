@@ -1,0 +1,65 @@
+#!/usr/bin/env zsh
+#
+# Warning:
+#   Please read all the scripts located in `./scripts/*` before running.
+#   Each script asks you for confirmation before it does anything, but
+#   reading them beforehand will mean you understand what is about to happen.
+# cat /etc/shells
+source ./scripts/shared/_utils.zsh
+
+echo
+echo -e "${PURPLE}Hey ${USER}, let's setup your mac...${NC}"
+
+# Add error for non-catalina or zsh usage.
+init_for_zsh
+
+# Run through each module - will be given option to run or not.
+do_action "Install brew and cask?" "dev" "brew.zsh"
+do_action "Install MAS?" "dev" "mas.zsh"
+do_action "Install Node via nvm?" "dev" "node.zsh"
+do_action "Install Python 3?" "dev" "python.zsh"
+do_action "Configure Go?" "dev" "go.zsh"
+do_action "Configure Minikube?" "dev" "minikube.zsh"
+do_action "Configure Git?" "dev" "git.zsh"
+do_action "Copy dotfiles and configs? - (this may overwrite existing files in your home directory)" "dev" "dotfiles.zsh"
+do_action "Install zsh / prezto things?" "dev" "zsh.zsh"
+do_action "Adjust general Mac OSX settings?" "dev" "mac.zsh"
+do_action "Go through non-automated things?" "dev" "manual.zsh"
+
+# Final output (script complete)
+echo
+echo -e "${YELLOW}- - - - - - EVERYTHING IS AWESOME! - - - - - -"
+cat <<"EOF"
+
+                _ _,---._
+       ,-','       `-.___
+      /-;'               `._
+     /\/          ._   _,'o \
+    ( /\       _,--'\,','"`. )
+     |\      ,'o     \'    //\
+     |      \        /   ,--'""`-.
+     :       \_    _/ ,-'         `-._
+      \        `--'  /                )
+       `.  \`._    ,'     ________,','
+         .--`     ,'  ,--` __\___,;'
+          \`.,-- ,' ,`_)--'  /`.,'
+           \( ;  | | )      (`-/
+             `--'| |)       |-/
+               | | |        | |
+               | | |,.,-.   | |_
+               | `./ /   )---`  )
+              _|  /    ,',   ,-'
+             ,'|_(    /-<._,' |--,
+             |    `--'---.     \/ \
+             |          / \    /\  \
+           ,-^---._     |  \  /  \  \
+        ,-'        \----'   \/    \--`.
+       /            \              \   \
+
+------------------------------------------------
++ + + G O O D  J O B  -   A L L  D O N E ! + + +
+EOF
+echo -e "${NC}"
+
+# Also display a nice output of current apple system stats using archey
+archey

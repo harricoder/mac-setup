@@ -8,10 +8,16 @@ I probably won't accept pull requests unless I really want the changes myself,
 nothing personal). There may be things/ideas worth copying here (I was
 heavily inspired by existing repos on github) - so knock yourself out.
 
-The basic usage is quite simple, run `./osx_install` and it asks you if you 
-want to execute each 'module'. This is however really structured in a way which
-assumes that you say 'yes' to each (option is there to account for re-running
-in case of initial failure).
+The basic usage is quite simple, there are currently 2 entrypoint scripts
+depending on required context:
+
+* `./osx_dev_install`  - Installing a general development environment
+* `./osx_music_install` - Setup for music production (i.e. DAW, Soft Synths)
+  
+Each entrypoint works in the same way, you will be presented with a series of
+questions for scripts that you may want to execute from each 'module'.
+However this is really structured in a way which assumes that you say 'yes' to
+each (option is there to account for re-running in case of initial failure).
 
 
 ## License
@@ -24,8 +30,9 @@ Licensed under the MIT license.
 
 **Before running any commands, you must edit files according to your needs.**
 
-So update packages in `scripts/brew.zsh` and `scripts/mas.zsh` etc...just have
-a general nosy around before running - so you know what is going to happen.
+So update packages in `scripts/*/brew.zsh` and `scripts/*/mas.zsh`
+etc. Just have a general nosy around before running - so you know what is
+going to happen.
 
 ```
 cd ~
@@ -34,7 +41,9 @@ cd mac-setup
 
 # Read through the install scripts before running (although you will be asked
 # for each step before it actually does anything.
-./osx_install
+./osx_dev_install
+or
+./osx_music_install
 ```
 
 
@@ -46,7 +55,7 @@ the Mac options to take effect, you will probably just have to restart anyways.
 ### What's included ?
 
 + Homebrew: `brew.zsh`
-  + Installs Homebrew AND brew install's all my currently used packages
+  + Installs Homebrew AND brew installs all my currently used packages
   + Uses homebrew-cask to install all my applications
 + MAS `mas.zsh`
   + Uses the excellent mas to install apps from the apple app store

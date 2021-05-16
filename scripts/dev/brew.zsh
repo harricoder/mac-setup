@@ -1,56 +1,18 @@
 #!/usr/bin/env zsh
 #
 # Brew and brew cask setup.
-source ./scripts/_utils.zsh
+source ./scripts/shared/_utils.zsh
+source ./scripts/shared/_brew.zsh
 
-# Nowadays brew cask is installed by default when you install brew.
-# This will be installed as part of Xcode - but brew needs this.
-if ! [ -x "$(command -v xcode-select)" ]; then
-  echo
-  echo "installing xcode-select tools..."
-  xcode-select --install
-fi
-echo "xcode tools are installed: $(xcode-select -v)"
-
-# Only install brew if not already installed previously.
-if ! [ -x "$(command -v brew)" ]; then
-  echo "installing brew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  echo
-fi
-
-# Just install a normal Brew
-function install() {
-  brew install "$1"
-  RESULT=$?
-  if [ $RESULT -eq 0 ]; then
-    print_success "Installed: $1"
-  else
-    print_error "Failed to install: $1"
-  fi
-}
-
-# Install a brew cask
-function install_cask() {
-  brew install --cask "$1"
-  RESULT=$?
-  if [ $RESULT -eq 0 ]; then
-    print_success "Installed: $1"
-  else
-    print_error "Failed to install: $1"
-  fi
-}
-
-echo "brew is installed: $(brew -v)"
-echo "brew updating..."
-brew update
-brew tap homebrew/cask-drivers
+# Install and update brew to latest.
+install_xcode_tools
+install_brew
 
 # Homebrew packages (non-cask)
 echo
 print_info "Installing Homebrew packages..."
-brew update
-brew cleanup
+clean_brew
+
 install ack
 install aircrack-ng
 install asciinema
@@ -92,16 +54,14 @@ install watch
 install siege
 
 # Clean up and confirm packages installed
-brew cleanup
-echo
-echo -e "${GREEN_TICK} These Homebrew packages successfully installed:${CYAN}"
-brew leaves
-echo -e "${NC}"
+clean_brew
+show_installed_packages
 ask_for_confirmation "Do these all match expected?"
 
 # Homebrew packages (cask only)
 echo
 print_info "Installing Homebrew Cask packages..."
+
 install_cask adobe-creative-cloud
 install_cask aerial
 install_cask balenaetcher
@@ -131,7 +91,6 @@ install_cask unity-hub
 install_cask vlc
 install_cask wireshark
 install_cask drawio
-install_cask roland-quad-capture-usb-driver
 install_cask pixel-picker
 install_cask visual-studio-code
 
@@ -141,12 +100,9 @@ install_cask virtualbox-extension-pack
 install_cask vagrant
 install_cask vagrant-manager
 
-echo
-echo -e "${GREEN_TICK} These Homebrew Cask packages successfully installed:${CYAN}"
-brew list --cask -1
-echo -e "${NC}"
-
 # Check casks look to be correct?
+clean_brew
+show_installed_cask_packages
 ask_for_confirmation "Do these all match expected?"
 echo
 

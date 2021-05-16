@@ -2,7 +2,7 @@
 #
 # Ensure minikube is properly installed (and uses preferred backends, etc).
 #
-source ./scripts/_utils.zsh
+source ./scripts/shared/_utils.zsh
 
 # Kubectl also gets installed via docker docker for mac.
 # Ensure that the brew version is used (less conflict).

@@ -4,9 +4,9 @@
 #
 # Note dotfiles need to be copied before this runs to ensure the default
 # symlinked files are not used.
-source ./scripts/_utils.zsh
+source ./scripts/shared/_utils.zsh
 
-# Provide warning to user, since it will get overriden EVERYTIME now!
+# Provide warning to user, since it will get overrode EVERYTIME now!
 ask_for_confirmation "This will override your .zshrc - OK to continue?"
 cp ./dotfiles/.zshrc ${HOME}/.zshrc
 
