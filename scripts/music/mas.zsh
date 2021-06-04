@@ -15,6 +15,7 @@ echo "Please ensure you are signed into to Apple App Store before continuing... 
 read -k 1 -s
 
 echo -e "${NC}"
+mas install 425424353   # The Unarchiver
 mas install 497799835   # Xcode
 mas install 552383089   # Dashlane
 mas install 425264550   # Blackmagic Disk Speed Test

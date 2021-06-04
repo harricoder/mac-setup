@@ -38,6 +38,7 @@ install_cask vlc
 install_cask visual-studio-code
 install_cask docker
 install_cask roland-quad-capture-usb-driver
+install_cask macs-fan-control
 
 # Check casks look to be correct?
 clean_brew
