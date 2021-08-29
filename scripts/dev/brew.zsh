@@ -70,15 +70,19 @@ install_cask calibre
 install_cask ccleaner
 install_cask cinebench
 install_cask dolphin
+install_cask drawio
 install_cask elgato-stream-deck
+install_cask expressvpn
 install_cask github
 install_cask google-chrome
 install_cask iterm2
 install_cask jet
 install_cask jetbrains-toolbox
 install_cask logitech-options
+install_cask macs-fan-control
 install_cask openemu
 install_cask parallels
+install_cask pixel-picker
 install_cask postman
 install_cask sequel-pro
 install_cask sketch
@@ -88,12 +92,9 @@ install_cask sublime-text
 install_cask suspicious-package
 install_cask transmit
 install_cask unity-hub
+install_cask visual-studio-code
 install_cask vlc
 install_cask wireshark
-install_cask drawio
-install_cask pixel-picker
-install_cask visual-studio-code
-install_cask macs-fan-control
 
 # Virtualbox requires special permissions
 install_cask virtualbox
