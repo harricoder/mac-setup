@@ -31,6 +31,8 @@ mas install 985367838   # Microsoft Outlook 365
 mas install 462062816   # Microsoft PowerPoint 365
 mas install 1284863847  # Unsplash Wallpapers
 mas install 1518425043  # Boop
+mas install 1528890965  # TextSniper
+mas install 441258766   # Magnet
 
 echo
 echo -e "${GREEN_TICK} All mas packages successfully installed:${CYAN}"
