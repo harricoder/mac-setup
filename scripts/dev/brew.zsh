@@ -99,6 +99,7 @@ install_cask unity-hub
 install_cask visual-studio-code
 install_cask vlc
 install_cask wireshark
+install_cask warp
 
 # Virtualbox requires special permissions
 install_cask virtualbox
