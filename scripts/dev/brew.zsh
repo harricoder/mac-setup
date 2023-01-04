@@ -68,7 +68,6 @@ install_cask balenaetcher
 install_cask bartender
 install_cask blender
 install_cask calibre
-install_cask ccleaner
 install_cask cinebench
 install_cask dolphin
 install_cask drawio
@@ -79,7 +78,6 @@ install_cask github
 install_cask google-chrome
 install_cask imageoptim
 install_cask iterm2
-install_cask jet
 install_cask jetbrains-toolbox
 install_cask logitech-options
 install_cask macs-fan-control
@@ -90,6 +88,7 @@ install_cask pixel-picker
 install_cask postman
 install_cask sequel-pro
 install_cask sketch
+install_cask canva
 install_cask sourcetree
 install_cask spotify
 install_cask sublime-text
@@ -120,10 +119,3 @@ install_cask docker
 install docker-completion
 install kubernetes-cli
 install minikube
-
-# This requires a specific order (one cask and one brew formulae)
-echo
-print_info "Installing osxfuse and sshfs..."
-install_cask macfuse
-install gromgit/fuse/sshfs
-echo

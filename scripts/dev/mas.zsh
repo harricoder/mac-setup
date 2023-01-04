@@ -18,7 +18,6 @@ echo -e "${NC}"
 mas install 425424353   # The Unarchiver
 mas install 497799835   # Xcode
 mas install 803453959   # Slack
-mas install 979538493   # Go for Gmail
 mas install 425264550   # Blackmagic Disk Speed Test
 mas install 585829637   # Todoist
 mas install 921923693   # LibreOffice Vanilla
