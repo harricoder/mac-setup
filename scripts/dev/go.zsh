@@ -11,6 +11,6 @@ if ! [ "$(grep GOPATH ~/.zshrc)" ]; then
 
   source ~/.zshrc
 fi
-go get golang.org/x/tools/cmd/godoc
+go install golang.org/x/tools/cmd/godoc@latest
 
 echo -e "${GREEN_TICK} Go has been successfully configured.${NC}"
