@@ -49,7 +49,6 @@ install zsh-syntax-highlighting
 install tldr
 install java
 install jq
-install archey
 install watch
 install siege
 
@@ -87,7 +86,6 @@ install_cask parallels
 install_cask pixel-picker
 install_cask postman
 install_cask sequel-pro
-install_cask sketch
 install_cask canva
 install_cask sourcetree
 install_cask spotify
@@ -102,7 +100,6 @@ install_cask warp
 
 # Virtualbox requires special permissions
 install_cask virtualbox
-install_cask virtualbox-extension-pack
 install_cask vagrant
 install_cask vagrant-manager
 

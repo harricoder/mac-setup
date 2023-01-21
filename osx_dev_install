@@ -62,4 +62,4 @@ EOF
 echo -e "${NC}"
 
 # Also display a nice output of current apple system stats using archey
-archey
+./scripts/shared/_archey.zsh
