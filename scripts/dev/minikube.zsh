@@ -17,7 +17,7 @@ echo "kubectl version..."
 kubectl version
 
 echo "setting minikube configs..."
-minikube config set driver parallels
+minikube config set driver virtualbox
 #minikube config set memory 8192
 
 # Set minikube to use parallels driver by default.

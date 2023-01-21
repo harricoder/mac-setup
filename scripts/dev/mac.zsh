@@ -22,66 +22,71 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Energy saving                                                               #
 ###############################################################################
 
-echo " - Automatically illuminate built-in MacBook keyboard in low light"
-defaults write com.apple.BezelServices kDim -bool true
+# Disable these until settings are defined for new Macbook.
+ 
+# echo " - Automatically illuminate built-in MacBook keyboard in low light"
+# defaults write com.apple.BezelServices kDim -bool true
 
-echo " - Turn off keyboard illumination when computer is not used for 5 minutes"
-defaults write com.apple.BezelServices kDimTime -int 300
+# echo " - Turn off keyboard illumination when computer is not used for 5 minutes"
+# defaults write com.apple.BezelServices kDimTime -int 300
 
-echo " - Enable lid wakeup"
-sudo pmset -a lidwake 1
+# echo " - Enable lid wakeup"
+# sudo pmset -a lidwake 1
 
-echo " - Disable wake when connect to power"
-sudo pmset -a acwake 0
+# echo " - Disable wake when connect to power"
+# sudo pmset -a acwake 0
 
-echo " - Restart automatically on power loss"
-sudo pmset -a autorestart 1
+# echo " - Restart automatically on power loss"
+# sudo pmset -a autorestart 1
 
-echo " - Restart automatically if the computer freezes"
-sudo systemsetup -setrestartfreeze on
+# echo " - Restart automatically if the computer freezes"
+# sudo systemsetup -setrestartfreeze on
 
 # Hibernation mode
 # 0: Disable hibernation (speeds up entering sleep mode)
 # 3: Copy RAM to disk powers memory but not disk
 # 25: As above but also removes power to memory
-echo " - Set RAM hibernation mode"
-sudo pmset -a hibernatemode 3
 
-echo " - Set high standby delay before writing hiberation file - 24 hrs"
-sudo pmset -a autopoweroff 1
-sudo pmset -a standby 1
-sudo pmset -a standbydelayhigh 86400
-sudo pmset -a standbydelaylow 10800
-sudo pmset -a highstandbythreshold 50
-# Sleep intermediate half-brightness state between full brightness and fully off
-sudo pmset -a halfdim 1
+# Disable these until settings are defined for new Macbook.
 
-echo " - Set auto power off (hibernate) to 8 hrs"
-sudo pmset -a autopoweroffdelay 28800
+# echo " - Set RAM hibernation mode"
+# sudo pmset -a hibernatemode 3
 
-echo " - Ensure tty does not prevent sleep"
-sudo pmset -a ttyskeepawake 0
+# echo " - Set high standby delay before writing hiberation file - 24 hrs"
+# sudo pmset -a autopoweroff 1
+# sudo pmset -a standby 1
+# sudo pmset -a standbydelayhigh 86400
+# sudo pmset -a standbydelaylow 10800
+# sudo pmset -a highstandbythreshold 50
+# # Sleep intermediate half-brightness state between full brightness and fully off
+# sudo pmset -a halfdim 1
 
-echo " - Disable the sudden motion sensor as it’s not useful for SSDs"
-sudo pmset -a sms 0
+# echo " - Set auto power off (hibernate) to 8 hrs"
+# sudo pmset -a autopoweroffdelay 28800
 
-echo " - Adjusting battery energy saving settings"
-sudo pmset -b powernap 0
-sudo pmset -b lessbright 1
-sudo pmset -b displaysleep 60
-sudo pmset -b disksleep 10
-sudo pmset -b powernap 0
-sudo pmset -b sleep 60
-sudo pmset -b womp 0
+# echo " - Ensure tty does not prevent sleep"
+# sudo pmset -a ttyskeepawake 0
 
-echo " - Adjusting AC energy saving settings"
-sudo pmset -c powernap 1
-sudo pmset -c lessbright 0
-sudo pmset -c displaysleep 180
-sudo pmset -c disksleep 0
-sudo pmset -c powernap 1
-sudo pmset -c sleep 0
-sudo pmset -c womp 1
+# echo " - Disable the sudden motion sensor as it’s not useful for SSDs"
+# sudo pmset -a sms 0
+
+# echo " - Adjusting battery energy saving settings"
+# sudo pmset -b powernap 0
+# sudo pmset -b lessbright 1
+# sudo pmset -b displaysleep 60
+# sudo pmset -b disksleep 10
+# sudo pmset -b powernap 0
+# sudo pmset -b sleep 60
+# sudo pmset -b womp 0
+
+# echo " - Adjusting AC energy saving settings"
+# sudo pmset -c powernap 1
+# sudo pmset -c lessbright 0
+# sudo pmset -c displaysleep 180
+# sudo pmset -c disksleep 0
+# sudo pmset -c powernap 1
+# sudo pmset -c sleep 0
+# sudo pmset -c womp 1
 
 
 ###############################################################################
