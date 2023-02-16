@@ -51,6 +51,8 @@ install java
 install jq
 install watch
 install siege
+install telnet
+install openssl
 
 # Clean up and confirm packages installed
 clean_brew
@@ -75,6 +77,7 @@ install_cask elgato-stream-deck
 install_cask expressvpn
 install_cask github
 install_cask google-chrome
+install_cask firefox
 install_cask imageoptim
 install_cask iterm2
 install_cask jetbrains-toolbox

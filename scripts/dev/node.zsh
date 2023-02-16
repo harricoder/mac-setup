@@ -3,7 +3,7 @@
 # NVM / Node (requires .zshrc)
 source ~/.zshrc
 
-wanted_nvm_version="0.37.2"
+wanted_nvm_version="0.39.3"
 
 if [ -f "~/.nvm/nvm.sh" ]; then
     source ~/.nvm/nvm.sh
@@ -27,5 +27,10 @@ if ! [ "$(command -v node)" ]; then
   source ~/.nvm/nvm.sh
   nvm install node --latest-npm
 fi
+
+echo "installing yarn..."
+npm install --global yarn
+echo
+yarn --version
 
 echo -e "${GREEN_TICK} node successfully installed: $(node --version) with npm: $(npm --version)${NC}"
