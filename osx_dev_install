@@ -23,6 +23,7 @@ do_action "Configure Minikube?" "dev" "minikube.zsh"
 do_action "Configure Git?" "dev" "git.zsh"
 do_action "Copy dotfiles and configs? - (this may overwrite existing files in your home directory)" "dev" "dotfiles.zsh"
 do_action "Install zsh / prezto things?" "dev" "zsh.zsh"
+do_action "Install local non-docker PHP environment?" "dev" "non-docker-env.zsh"
 do_action "Adjust general Mac OSX settings?" "dev" "mac.zsh"
 do_action "Go through non-automated things?" "dev" "manual.zsh"
 
