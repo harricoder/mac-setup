@@ -23,6 +23,9 @@ git config --global core.editor "vim"
 echo " * setting pull strategy to fast-forward only"
 git config --global pull.ff only
 
+echo " * setting default branch name to main"
+git config --global init.defaultBranch main
+
 echo " * creating aliases"
 # Simple log (latest 25 hash and msg only)
 git config --global alias.slog 'log --all --decorate --oneline --graph -n 25'
