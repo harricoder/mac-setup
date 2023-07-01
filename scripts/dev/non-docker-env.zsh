@@ -88,6 +88,7 @@ echo
 #  > valet start
 #  > valet stop
 #  > valet trust
+#  > valet status
 #  > valet uninstall --force
 
 # Service entry points commands
