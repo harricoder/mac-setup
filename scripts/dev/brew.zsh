@@ -37,11 +37,11 @@ install pipenv
 install pyenv
 install ruby
 install ssh-copy-id
-install packer
+install hashicorp/tap/packer
+install hashicorp/tap/vault
 install terraform
 install terraform-inventory
 install tree
-install vault
 install vim
 install wget
 install zsh-completions
@@ -88,7 +88,6 @@ install_cask openemu
 install_cask parallels
 install_cask pixel-picker
 install_cask postman
-install_cask sequel-pro
 install_cask canva
 install_cask sourcetree
 install_cask spotify
