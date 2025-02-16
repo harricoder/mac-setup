@@ -1,6 +1,7 @@
 # mac-setup
 
-My OSX setup and dotfiles for >= Catalina (only for zsh).
+My OSX setup and dotfiles for >= Sequoia (only for zsh). It may work on OS
+versions before this, but it has not been tested on them.
 
 These are a collection of my personal dotfiles and configurations. There are
 plenty of other more 'shareable' repos out there for dotfile usage (meaning
@@ -12,7 +13,8 @@ The basic usage is quite simple, there are currently 2 entrypoint scripts
 depending on required context:
 
 * `./osx_dev_install`  - Installing a general development environment
-* `./osx_music_install` - Setup for music production (i.e. DAW, Soft Synths)
+* `./osx_desktop_install` - Setup for music production and desktop dev
+ (i.e. DAW, Soft Synths, dev tools)
   
 Each entrypoint works in the same way, you will be presented with a series of
 questions for scripts that you may want to execute from each 'module'.
@@ -43,7 +45,7 @@ cd mac-setup
 # for each step before it actually does anything.
 ./osx_dev_install
 or
-./osx_music_install
+./osx_desktop_install
 ```
 
 
@@ -100,14 +102,11 @@ There are many other alternative to the above, so also check them out too.
 
 ## Works with:
 
-:x: <= Mojave
+:x: <= Sonoma
 
-✅  - Catalina
-
-✅  - BigSur
+✅  - Sequoia
 
 ## Warranty:
 
-User beware, there is no warranty or guarantee that using these scripts won't 
-result in the destruction of life on this planet...
+User beware, there is no warranty or guarantee that using these scripts
 (so please read them before use).
