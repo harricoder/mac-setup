@@ -1,4 +1,7 @@
 # Project specific gitignore.
+.idea
+.vscode
 configs/profile/backgrounds/*
 !configs/profile/backgrounds/.gitkeep
 configs/profile/*.png
+.DS_Store

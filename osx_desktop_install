@@ -1,0 +1,49 @@
+#!/usr/bin/env zsh
+#
+# Warning:
+#   Please read all the scripts located in `./scripts/*` before running.
+#   Each script asks you for confirmation before it does anything, but
+#   reading them beforehand will mean you understand what is about to happen.
+# cat /etc/shells
+source ./scripts/utility/_utils.zsh
+
+echo
+echo -e "${PURPLE}Hey ${USER}, let's setup your mac...${NC}"
+
+# Add error for non-catalina or zsh usage.
+init_for_zsh
+
+# Run through each module - will be given option to run or not.
+do_action "Install brew and cask?" "desktop" "brew.zsh"
+do_action "Install MAS?" "desktop" "mas.zsh"
+do_action "Install Python 3?" "shared" "python.zsh"
+do_action "Install Node via nvm?" "shared" "node.zsh"
+do_action "Configure Go?" "shared" "go.zsh"
+do_action "Configure Git?" "shared" "git.zsh"
+do_action "Install zsh / prezto things?" "shared" "zsh.zsh"
+do_action "Copy dotfiles and configs? - (this may overwrite existing files in your home directory)" "shared" "dotfiles.zsh"
+do_action "Adjust general Mac OSX settings?" "desktop" "mac.zsh"
+do_action "Go through non-automated things?" "desktop" "manual.zsh"
+
+# Final output (script complete)
+echo
+echo -e "${GREEN}- - - - - - EVERYTHING IS AWESOME! - - - - - -"
+cat <<"EOF"
+
+   _______       __
+ /   ------.   / ._`_
+|  /         ~--~    \
+| |             __    `.____________________ _^-----^
+| |  I=|=======/--\=========================| o o o |
+\ |  I=|=======\__/=========================|_o_o_o_|
+ \|                   /                       ~    ~
+   \       .---.    .
+     -----'     ~~''
+
+------------------------------------------------
++ + + G O O D  J O B  -   R O C K  O N ! + + +
+EOF
+echo -e "${NC}"
+
+# Also display a nice output of current apple system stats using archey
+./scripts/utility/_archey.zsh

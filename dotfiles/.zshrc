@@ -12,12 +12,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # PHP
 export PATH=$PATH:$HOME/.composer/vendor/bin
-alias sail="./vendor/bin/sail"
 
 # Python
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
 # Zsh Completion
 if type brew &>/dev/null; then
@@ -35,4 +35,5 @@ alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulato
 
 # Load Prezto and other stuff
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source <(fzf --zsh)

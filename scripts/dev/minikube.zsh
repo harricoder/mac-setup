@@ -2,7 +2,7 @@
 #
 # Ensure minikube is properly installed (and uses preferred backends, etc).
 #
-source ./scripts/shared/_utils.zsh
+source ./scripts/utility/_utils.zsh
 
 # Kubectl also gets installed via docker docker for mac.
 # Ensure that the brew version is used (less conflict).
@@ -20,7 +20,6 @@ echo "setting minikube configs..."
 minikube config set driver virtualbox
 #minikube config set memory 8192
 
-# Set minikube to use parallels driver by default.
 echo "minikube version..."
 minikube version
 

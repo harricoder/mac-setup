@@ -5,7 +5,7 @@
 #   Each script asks you for confirmation before it does anything, but
 #   reading them beforehand will mean you understand what is about to happen.
 # cat /etc/shells
-source ./scripts/shared/_utils.zsh
+source ./scripts/utility/_utils.zsh
 
 echo
 echo -e "${PURPLE}Hey ${USER}, let's setup your mac...${NC}"
@@ -16,13 +16,13 @@ init_for_zsh
 # Run through each module - will be given option to run or not.
 do_action "Install brew and cask?" "dev" "brew.zsh"
 do_action "Install MAS?" "dev" "mas.zsh"
-do_action "Install Node via nvm?" "dev" "node.zsh"
-do_action "Install Python 3?" "dev" "python.zsh"
-do_action "Configure Go?" "dev" "go.zsh"
+do_action "Install Node via nvm?" "shared" "node.zsh"
+do_action "Install Python 3?" "shared" "python.zsh"
+do_action "Configure Go?" "shared" "go.zsh"
 do_action "Configure Minikube?" "dev" "minikube.zsh"
-do_action "Configure Git?" "dev" "git.zsh"
-do_action "Copy dotfiles and configs? - (this may overwrite existing files in your home directory)" "dev" "dotfiles.zsh"
-do_action "Install zsh / prezto things?" "dev" "zsh.zsh"
+do_action "Configure Git?" "shared" "git.zsh"
+do_action "Copy dotfiles and configs? - (this may overwrite existing files in your home directory)" "shared" "dotfiles.zsh"
+do_action "Install zsh / prezto things?" "shared" "zsh.zsh"
 do_action "Install local non-docker PHP environment?" "dev" "non-docker-env.zsh"
 do_action "Adjust general Mac OSX settings?" "dev" "mac.zsh"
 do_action "Go through non-automated things?" "dev" "manual.zsh"
@@ -63,4 +63,4 @@ EOF
 echo -e "${NC}"
 
 # Also display a nice output of current apple system stats using archey
-./scripts/shared/_archey.zsh
+./scripts/utility/_archey.zsh

@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 #
 # Brew and brew cask setup.
-source ./scripts/shared/_utils.zsh
-source ./scripts/shared/_brew.zsh
+source ./scripts/utility/_utils.zsh
+source ./scripts/utility/_brew.zsh
 
 ask_for_confirmation "Are you sure you want to install dev env locally using Valet?"
 
