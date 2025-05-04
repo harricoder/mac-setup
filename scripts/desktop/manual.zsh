@@ -52,6 +52,8 @@ section_divider "Configuring Music Tools"
 man_prompt "Sign in to iLok"
 man_prompt "Sign in to Synthesia"
 man_prompt "Sign in to Studio One"
+man_prompt "Download and sign in to EastWest Installation Center"
+man_prompt "Enter Guitar Pro license code"
 
 echo
 echo -e "${GREEN_TICK} Manual actions are all complete.${NC}"

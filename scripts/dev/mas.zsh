@@ -19,7 +19,6 @@ mas install 425424353   # The Unarchiver
 mas install 497799835   # Xcode
 mas install 425264550   # Blackmagic Disk Speed Test
 mas install 585829637   # Todoist
-mas install 921923693   # LibreOffice Vanilla
 mas install 1295203466  # Microsoft Remote Desktop
 mas install 784801555   # Microsoft OneNote
 mas install 462058435   # Microsoft Excel 365

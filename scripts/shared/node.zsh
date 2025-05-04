@@ -3,7 +3,7 @@
 # NVM / Node (requires .zshrc)
 source ~/.zshrc
 
-wanted_nvm_version="0.40.1"
+wanted_nvm_version="0.40.3"
 
 if [ -f "~/.nvm/nvm.sh" ]; then
     source ~/.nvm/nvm.sh

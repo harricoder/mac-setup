@@ -124,7 +124,7 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Set Mouse track speed
-defaults write -g com.apple.mouse.scaling -int 3
+defaults write -g com.apple.mouse.scaling -int 4
 
 
 ###############################################################################
@@ -139,12 +139,6 @@ defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 36
-
-# Remove the auto-hiding Dock delay
-#defaults write com.apple.dock autohide-delay -float 0
-#
-## Remove the animation when hiding/showing the Dock
-#defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
@@ -190,9 +184,6 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 #echo " Finder: show hidden files by default"
 defaults write com.apple.finder AppleShowAllFiles -bool true
-
-# Allow OpenEMU to function properly
-xattr -d com.apple.quarantine /Applications/OpenEmu.app
 
 
 echo

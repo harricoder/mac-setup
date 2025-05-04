@@ -26,33 +26,36 @@ install gnupg
 install golang
 install graphviz
 install grep
+install hashicorp/tap/packer
+install hashicorp/tap/terraform
+install hashicorp/tap/vault
 install htop
 install httpie
+install java
 install jpegoptim
-install optipng
-install pngquant
+install jq
 install mas
+install ncurses
 install nmap
+install openssl
+install optipng
 install php
 install pipenv
+install pngquant
+install poetry
+install pulumi/tap/pulumi
 install pyenv
 install ruby
+install siege
 install ssh-copy-id
-install hashicorp/tap/packer
-install hashicorp/tap/vault
-install hashicorp/tap/terraform
+install telnet
+install tldr
 install tree
 install vim
+install watch
 install wget
 install zsh-completions
 install zsh-syntax-highlighting
-install tldr
-install java
-install jq
-install watch
-install siege
-install telnet
-install openssl
 
 # Clean up and confirm packages installed
 clean_brew
@@ -63,27 +66,29 @@ ask_for_confirmation "Do these all match expected?"
 echo
 print_info "Installing Homebrew Cask packages..."
 
+install_cask 1password
 install_cask adobe-creative-cloud
 install_cask balenaetcher
 install_cask blender
-install_cask calibre
-install_cask cinebench
+install_cask canva
+install_cask chatgpt
+install_cask cursor
 install_cask drawio
 install_cask dropzone
 install_cask elgato-stream-deck
 install_cask expressvpn
+install_cask firefox
 install_cask github
 install_cask google-chrome
-install_cask firefox
 install_cask imageoptim
 install_cask iterm2
 install_cask jetbrains-toolbox
 install_cask logi-options+
 install_cask mockuuups-studio
+install_cask notion
 install_cask parallels
 install_cask pixel-picker
 install_cask postman
-install_cask canva
 install_cask sourcetree
 install_cask spotify
 install_cask suspicious-package
@@ -92,7 +97,6 @@ install_cask unity-hub
 install_cask visual-studio-code
 install_cask vlc
 install_cask wireshark
-install_cask 1password
 
 # Check casks look to be correct?
 clean_brew
