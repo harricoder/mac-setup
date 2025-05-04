@@ -94,6 +94,7 @@ install_cask spotify
 install_cask suspicious-package
 install_cask transmit
 install_cask unity-hub
+install_cask virtualbox
 install_cask visual-studio-code
 install_cask vlc
 install_cask wireshark
