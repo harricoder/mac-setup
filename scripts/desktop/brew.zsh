@@ -33,8 +33,7 @@ install mas
 install ncurses
 install openssl
 install php
-install poetry
-install pyenv
+install rust
 install telnet
 install tldr
 install tree
@@ -66,18 +65,15 @@ install_cask dropzone
 install_cask elgato-stream-deck
 install_cask github
 install_cask google-chrome
-install_cask guitar-pro
 install_cask iterm2
 install_cask jetbrains-toolbox
 install_cask logi-options+
 install_cask mockuuups-studio
-install_cask native-access
 install_cask notion
 install_cask parallels
 install_cask pixel-picker
 install_cask postman
 install_cask sourcetree
-install_cask spitfire-audio
 install_cask spotify
 install_cask suspicious-package
 install_cask transmit
@@ -85,8 +81,12 @@ install_cask visual-studio-code
 install_cask vlc
 
 # Music
-install_cask presonus-universal-control
+install_cask guitar-pro
+install_cask ik-product-manager
 install_cask ilok-license-manager
+install_cask native-access
+install_cask presonus-universal-control
+install_cask spitfire-audio
 install_cask synthesia
 
 # Docker
