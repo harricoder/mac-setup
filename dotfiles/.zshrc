@@ -16,6 +16,12 @@ export PATH="$HOME/.local/bin:$PATH"
 # PHP
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Go
+export GOPATH="$HOME/Projects/Go"
+
 # Initialize Homebrew
 if [ -f "/opt/homebrew/bin/brew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -30,9 +36,6 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
-
-# Go
-export GOPATH="$HOME/Projects/Go"
 
 # Aliases
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
