@@ -40,12 +40,10 @@ install nmap
 install openssl
 install optipng
 install php
-install pipenv
 install pngquant
-install poetry
 install pulumi/tap/pulumi
-install pyenv
 install ruby
+install rust
 install siege
 install ssh-copy-id
 install telnet
