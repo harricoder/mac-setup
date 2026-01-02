@@ -65,7 +65,7 @@ echo
 print_info "Installing Homebrew Cask packages..."
 
 install_cask 1password
-install_cask adobe-creative-cloud
+install_cask affinity
 install_cask balenaetcher
 install_cask blender
 install_cask canva
