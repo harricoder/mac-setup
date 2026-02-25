@@ -16,6 +16,7 @@ init_for_zsh
 # Run through each module - will be given option to run or not.
 do_action "Install brew and cask?" "dev" "brew.zsh"
 do_action "Install MAS?" "dev" "mas.zsh"
+do_action "Install AI tools?" "dev" "ai.zsh"
 do_action "Install Node via nvm?" "shared" "node.zsh"
 do_action "Install Python 3?" "shared" "python.zsh"
 do_action "Configure Go?" "shared" "go.zsh"

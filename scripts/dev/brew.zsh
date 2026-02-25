@@ -55,6 +55,10 @@ install wget
 install zsh-completions
 install zsh-syntax-highlighting
 
+# Atlassian CLI
+brew tap atlassian/homebrew-acli
+install acli
+
 # Clean up and confirm packages installed
 clean_brew
 show_installed_packages
@@ -69,8 +73,6 @@ install_cask affinity
 install_cask balenaetcher
 install_cask blender
 install_cask canva
-install_cask chatgpt
-install_cask cursor
 install_cask drawio
 install_cask dropzone
 install_cask elgato-stream-deck
