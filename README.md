@@ -1,112 +1,194 @@
-# mac-setup
+<div align="center">
+  <img src="docs/mac-setup-icon.png" alt="mac-setup icon" width="128" />
+  <h1>🍎 mac-setup</h1>
+  <p>
+    <img src="https://img.shields.io/badge/macOS-Sequoia_15%2B-000000?logo=apple&logoColor=white" alt="macOS" />
+    <img src="https://img.shields.io/badge/Apple_Silicon-ARM-ED1C24?logo=arm&logoColor=white" alt="Architecture" />
+    <img src="https://img.shields.io/badge/Shell-zsh-4EAA25?logo=gnubash&logoColor=white" alt="Shell" />
+    <img src="https://img.shields.io/badge/License-MIT-blue" alt="License" />
+  </p>
+</div>
 
-My OSX setup and dotfiles for >= Sequoia (only for zsh). It may work on OS
-versions before this, but it has not been tested on them.
+My macOS setup scripts and dotfiles. Clone, run, and get a fully configured
+development or music-production machine in one sitting.
 
-These are a collection of my personal dotfiles and configurations. There are
-plenty of other more 'shareable' repos out there for dotfile usage (meaning
-I probably won't accept pull requests unless I really want the changes myself,
-nothing personal). There may be things/ideas worth copying here (I was
-heavily inspired by existing repos on github) - so knock yourself out.
+These are opinionated and tailored to my workflow - there are plenty of more
+"shareable" dotfile repos out there. That said, feel free to steal ideas.
 
-The basic usage is quite simple, there are currently 2 entrypoint scripts
-depending on required context:
+## 🖥 Profiles
 
-* `./osx_dev_install`  - Installing a general development environment
-* `./osx_desktop_install` - Setup for music production and desktop dev
- (i.e. DAW, Soft Synths, dev tools)
-  
-Each entrypoint works in the same way, you will be presented with a series of
-questions for scripts that you may want to execute from each 'module'.
-However this is really structured in a way which assumes that you say 'yes' to
-each (option is there to account for re-running in case of initial failure).
+**WARNING:** This script does not backup any existing dotfiles or config.
 
+Before running any commands, you must edit files according to your needs.
 
-## License
-Licensed under the MIT license.
+There are two entry-point scripts, each targeting a different machine role:
 
+| Script | Purpose |
+|---|---|
+| `./osx_dev_install` | General development environment - CLI tools, languages, containers, AI tooling |
+| `./osx_desktop_install` | Music production + desktop dev - everything above minus some dev-only extras, plus DAWs, soft synths and audio tools |
 
-## Installation:
+Both scripts walk you through every step interactively (yes/no per module), so
+you can skip anything or safely re-run after a failure.
 
-**WARNING: This script does not backup any existing dotfiles or config.**
+## 🔒 Requirements
 
-**Before running any commands, you must edit files according to your needs.**
+- **Apple Silicon (ARM) only** — Intel is not supported
+- **macOS Sequoia 15+**
+- **zsh** as default shell
+- Signed in to the **Apple App Store** (for MAS installs)
 
-So update packages in `scripts/*/brew.zsh` and `scripts/*/mas.zsh`
-etc. Just have a general nosy around before running - so you know what is
-going to happen.
+## 🚀 Quick Start
 
-```
+**This script does not backup any existing dotfiles or config. Please read the scripts before running.**
+
+```shell
 cd ~
 git clone https://github.com/harricoder/mac-setup.git
 cd mac-setup
 
-# Read through the install scripts before running (although you will be asked
-# for each step before it actually does anything.
+# Development machine
 ./osx_dev_install
-or
+
+# OR music production / desktop machine
 ./osx_desktop_install
 ```
 
+Each module asks for confirmation before executing, so you can bail at any point.
 
-## Usage:
+## 📦 What Gets Installed
 
-At the very least you will have to restart your shell session, but for some of
-the Mac options to take effect, you will probably just have to restart anyways.
+### CLI Tools
 
-### What's included ?
+`ack` `aircrack-ng` `asciinema` `awscli` `cloc` `composer` `cookiecutter`
+`fzf` `git` `gnupg` `golang` `graphviz` `grep` `htop` `httpie` `java` `jq`
+`jpegoptim` `mas` `ncurses` `nmap` `openssl` `optipng` `php` `pngquant`
+`ruby` `rust` `siege` `ssh-copy-id` `telnet` `tldr` `tree` `vim` `watch`
+`wget` `zsh-completions` `zsh-syntax-highlighting`
 
-+ Homebrew: `brew.zsh`
-  + Installs Homebrew AND brew installs all my currently used packages
-  + Uses homebrew-cask to install all my applications
-+ MAS `mas.zsh`
-  + Uses the excellent mas to install apps from the apple app store
-+ Node `node.zsh`
-  + Install nvm
-  + Latest version of node via nvm
-+ Programming Languages
-  + Python 3 (via pyenv) `python.zsh`
-  + Configure Go (already installed via brew) `go.zsh`
-  + more...
-+ Git `git.zsh`
-  + Git config
-  + Global gitignore
-+ Dotfiles `dotfiles.zsh`
-  + Various dotfiles (cp these - it does not symlink)
-  + Creates iTerm2 preferences (need to manually import profile)
-  + Copies profile pic and background images
-+ ZSH `zsh.zsh`
-  + Installs zsh
-  + Sets up zprezto
-+ MacOS `mac.zsh`
-  + Installs applications via the Mac App Store
-+ Manual reminders `manual.zsh`
-  + Anything that can't be automated (will get a reminder to do)
-  + Things that can be automated (but prefer to re-do, like ssh key creation)
-    will also get a reminder for.
+HashiCorp: `packer` `terraform` `vault`
 
+Atlassian: `acli`
 
-## Credits:
+Containers: `docker` `docker-completion` `kubernetes-cli` `minikube`
 
-This was heavily inspired by a number of other well known `dotfile` projects as
-well as a number I found throughout github. The core (i.e. what makes something
-like this even possible) is probably down to mainly these two projects:
+> Desktop profile installs a subset of the above (drops security/image-optimisation tools).
 
-*Homebrew*
-https://brew.sh/
+### Applications
 
-*mas*
-https://github.com/mas-cli/mas
+`1Password` `Affinity` `balenaEtcher` `Blender` `Canva` `draw.io`
+`Dropzone` `Elgato Stream Deck` `ExpressVPN` `Firefox` `GitHub Desktop`
+`Google Chrome` `ImageOptim` `iTerm2` `JetBrains Toolbox` `Logi Options+`
+`Mockuuups Studio` `Notion` `Parallels` `Pixel Picker` `Postman`
+`Sourcetree` `Spotify` `Suspicious Package` `Transmit` `Unity Hub`
+`VirtualBox` `Visual Studio Code` `VLC` `Wireshark`
 
-There are many other alternative to the above, so also check them out too.
+> Desktop profile swaps out a few dev-only apps (e.g. no ExpressVPN, Firefox, ImageOptim, Unity Hub, VirtualBox, Wireshark) and adds Calibre.
 
-## Works with:
+### AI Tools (dev profile only)
 
-:x: <= Sonoma
+`Claude` (CLI + desktop app) · `Codex` (CLI + ChatGPT desktop app) · `Cursor`
 
-✅  >= Sequoia
+Installed via a dedicated `ai.zsh` module.
 
-## Warranty:
+### Music Production (desktop profile only)
 
-User beware, there is no warranty or guarantee that using these scripts
-(so please read them before use).
+`Guitar Pro` `iLok License Manager` `IK Product Manager`
+`Native Access` `PreSonus Universal Control` `Spitfire Audio` `Synthesia`
+
+### Mac App Store
+
+`The Unarchiver` `Xcode` `Blackmagic Disk Speed Test` `Todoist`
+`Microsoft OneNote` `Microsoft Excel` `Microsoft Word`
+`Microsoft Outlook` `Microsoft PowerPoint` `Boop` `TextSniper`
+
+> Dev profile also installs `Microsoft Remote Desktop`.
+
+### Languages & Runtimes
+
+| Language | Manager | Details |
+|---|---|---|
+| **Node** | nvm | Latest Node + Yarn |
+| **Python** | uv | Latest Python 3, Ansible installed as a uv tool |
+| **Go** | Homebrew | Configured with `GOPATH` + godoc |
+| **Rust** | Homebrew | Installed via brew formula |
+| **Ruby** | Homebrew | Installed via brew formula |
+| **PHP** | Homebrew | Installed via brew formula |
+| **Java** | Homebrew | Installed via brew cask |
+
+### Shell & Dotfiles
+
+- Copies dotfiles to `~/` (does **not** symlink)
+- Installs and configures [Prezto](https://github.com/sorin-ionescu/prezto) for zsh
+- Copies iTerm2 profile, terminal background and profile picture
+
+### macOS Defaults
+
+Opinionated `defaults write` commands covering:
+
+- Screenshot format (PNG) and save location (Desktop)
+- Disable natural scrolling, smart quotes, smart dashes
+- Dock: auto-hide, icon size, highlight hover
+- Prevent Photos auto-open on device plug-in
+- No .DS_Store on network volumes
+- Finder: show hidden files, disable empty-trash warning
+- Save to disk by default (not iCloud)
+
+### Git Config
+
+- Global `.gitignore`
+- Editor set to `vim`, pull strategy `ff-only`, default branch `main`
+- GPG signing (interactive setup)
+- Aliases: `slog`, `brag`, `reset-branch`, `co`, `cob`, `ci`, `st`, `br`
+
+## ⚙️ How It Works
+
+Each entry-point script sources small, focused modules from `scripts/`. You are
+prompted with a yes/no before every module runs, making the whole process
+interactive and re-runnable. The rough order is:
+
+1. Homebrew + cask packages
+2. Mac App Store apps (via `mas`)
+3. AI tools (dev only)
+4. Languages & runtimes (Node, Python, Go)
+5. Minikube config (dev only)
+6. Git configuration
+7. Dotfiles + shell (zsh / Prezto)
+8. macOS defaults
+9. Manual post-install reminders
+
+## 🔧 Customisation
+
+| Want to… | Edit |
+|---|---|
+| Add/remove Homebrew packages | `scripts/dev/brew.zsh` or `scripts/desktop/brew.zsh` |
+| Add/remove App Store apps | `scripts/dev/mas.zsh` or `scripts/desktop/mas.zsh` |
+| Change AI tools | `scripts/dev/ai.zsh` |
+| Tweak macOS defaults | `scripts/dev/mac.zsh` or `scripts/desktop/mac.zsh` |
+| Edit dotfiles | `dotfiles/` directory |
+| Change shell/Prezto config | `scripts/shared/zsh.zsh` |
+| Modify git setup | `scripts/shared/git.zsh` |
+| Adjust post-install reminders | `scripts/dev/manual.zsh` or `scripts/desktop/manual.zsh` |
+
+## 📋 Post-Install
+
+The scripts will walk you through these at the end, but for reference:
+
+**Mac settings** — adjust monitor arrangement, enable Firewall, configure Finder sidebar, update profile image / wallpaper, tidy the Dock.
+
+**Sign in to apps** — 1Password, Google Chrome, Office 365, Todoist, Spotify, JetBrains Toolbox, Parallels, Transmit, Dropzone.
+
+**Developer bits** — import iTerm2 profile, create/copy SSH + GPG keys, fix zsh completions (`compaudit | xargs chmod g-w`).
+
+**Music tools** (desktop only) — sign in to iLok, Synthesia, Studio One; download EastWest Installation Center; enter Guitar Pro licence.
+
+**Backups** — copy files from Time Machine, plug in iPhone, set up Time Machine on external drive.
+
+## 🙏 Credits
+
+[Homebrew](https://brew.sh/) and [mas](https://github.com/mas-cli/mas) make
+all of this possible. Inspired by countless dotfile repos across GitHub.
+
+## 📄 License
+
+[MIT](LICENSE)
