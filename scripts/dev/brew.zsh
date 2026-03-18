@@ -22,6 +22,7 @@ install composer
 install cookiecutter
 install fzf
 install git
+install gh
 install gnupg
 install golang
 install graphviz
