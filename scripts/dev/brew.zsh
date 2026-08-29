@@ -15,6 +15,8 @@ clean_brew
 
 install ack
 install aircrack-ng
+install ansible
+install ansible-lint
 install asciinema
 install awscli
 install cloc

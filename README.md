@@ -60,8 +60,9 @@ Each module asks for confirmation before executing, so you can bail at any point
 
 ### CLI Tools
 
-`ack` `aircrack-ng` `asciinema` `awscli` `cloc` `composer` `cookiecutter`
-`fzf` `git` `gnupg` `golang` `graphviz` `grep` `htop` `httpie` `java` `jq`
+`ack` `aircrack-ng` `ansible` `ansible-lint` `asciinema` `awscli` `cloc`
+`composer` `cookiecutter` `fzf` `git` `gnupg` `golang` `graphviz` `grep`
+`htop` `httpie` `java` `jq`
 `jpegoptim` `mas` `ncurses` `nmap` `openssl` `optipng` `php` `pngquant`
 `ruby` `rust` `siege` `ssh-copy-id` `telnet` `tldr` `tree` `vim` `watch`
 `wget` `zsh-completions` `zsh-syntax-highlighting`
@@ -109,7 +110,8 @@ Installed via a dedicated `ai.zsh` module.
 | Language | Manager | Details |
 |---|---|---|
 | **Node** | nvm | Latest Node + Yarn |
-| **Python** | uv | Latest Python 3, Ansible installed as a uv tool |
+| **Python** | uv | Latest Python 3 |
+| **Ansible** | Homebrew | `ansible` + `ansible-lint` |
 | **Go** | Homebrew | Configured with `GOPATH` + godoc |
 | **Rust** | Homebrew | Installed via brew formula |
 | **Ruby** | Homebrew | Installed via brew formula |
